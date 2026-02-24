@@ -1,0 +1,18 @@
+<h2 style="text-align: center;">FARMCHAINX</h2>
+<link rel="stylesheet" href="upload.css" />
+<div style="margin-top: 20px;">
+  <h3>Upload Crop Image</h3>
+<input type="file" (change)="onFileSelected($event)" />
+
+<button (click)="upload()">Analyze Crop</button>
+</div>
+<div *ngIf="result" style="text-align: center; margin-top: 20px;">
+  <h3>Result</h3>
+
+  <p><b>Health:</b> {{result.health}}%</p>
+  <p><b>Grade:</b> {{result.grade}}</p>
+  <p><b>Disease:</b> {{result.disease}}</p>
+
+  <h3>QR Code:</h3>
+  <img [src]="result.qrCodePath" width="200" />
+</div>
