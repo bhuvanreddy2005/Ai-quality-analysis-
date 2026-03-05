@@ -68,3 +68,10 @@ def test():
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
+@app.route('/dashboard', methods=['GET'])
+def dashboard():
+    return {
+        "module": "Crop Analysis",
+        "status": "Online",
+        "features": ["Secure", "Analytics", "Verified"]
+    }
